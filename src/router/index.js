@@ -3,8 +3,13 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const Login = () => import('@/views/login/Login.vue')
-const Home = () => import('@/views/home/Home')
+
+const Login = () => import(/* webpackChunkName: "group-foo" */ '@/views/login/Login.vue')
+const Home = () => import(/* webpackChunkName: "group-foo" */ '@/views/home/Home')
+
+
+// const Login = () => import('@/views/login/Login.vue')
+// const Home = () => import('@/views/home/Home')
 const MainShow = () => import('@/views/home/childComps/maincontent/MainShow')
 const Users = () => import('@/views/home/childComps/maincontent/users/Users')
 const Rights = () => import('@/views/home/childComps/maincontent/rights/Rights')
